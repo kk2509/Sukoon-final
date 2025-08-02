@@ -1,0 +1,25 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+// ✅ Correct Firebase config (matches your sukoon-app project)
+const firebaseConfig = {
+ apiKey: "AIzaSyAAttonvSoCdu0UAIruIV9domLadtbq1oo",
+  authDomain: "mental-health-app-acce4.firebaseapp.com",
+  projectId: "mental-health-app-acce4",
+  storageBucket: "mental-health-app-acce4.firebasestorage.app",
+  messagingSenderId: "848490109619",
+  appId: "1:848490109619:web:06fb72b40c73c131136ec6",
+  measurementId: "G-H502E15YR6"
+};
+
+// ✅ Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+// ✅ Export everything correctly
+export default app; // 👈 default export
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
