@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://sukoon-backend-r0zk.onrender.com/api" // your backend URL
+  baseURL: "http://localhost:5004" // your backend URL
 });
 
 API.interceptors.request.use((req) => {
